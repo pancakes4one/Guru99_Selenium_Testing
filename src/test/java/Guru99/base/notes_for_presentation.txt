@@ -1,0 +1,159 @@
+https://www.softwaretestinghelp.com/page-object-model-pom-with-pagefactory/
+
+When would you use a smoke test?
+Smoke Testing is done whenever the new functionalities of the software are
+developed and integrated with an existing build that is deployed in a QA/staging
+environment. It ensures that all critical functionalities are working correctly.
+In this testing method, the development team deploys the build in the QA.
+
+REGRESSION TESTING is defined as a type of software testing to confirm that a
+recent program or code change has not adversely affected existing features.
+Regression Testing is nothing but a full or partial selection of already executed
+test cases which are re-executed to ensure existing functionalities work fine
+
+Typically, regression testing is applied under these circumstances:
+A new requirement is added to an existing feature.
+A new feature or functionality is added.
+The codebase is fixed to solve defects.
+The source code is optimized to improve performance.
+Patch fixes are added.
+Changes in configuration.
+
+Why smoke Sanity and regression testing types are needed?
+Image result for which tests go in smoke vs regression
+Smoke and Sanity testing help the QA team save time by quickly testing to make sure
+if an application is working properly or not. Also, it ensures that the product is
+eligible for further testing. Whereas Regression testing helps enhance the confidence
+about the software quality after a particular change.
+
+------------------
+
+WHAT IS POM?  /  Page Object Model
+
+A DESIGN PATTERN used to create an Object Repository (place to store)
+for web UI elements
+    - For each webpage of the application we will create a corresponding class
+    - We will find the page elements of the web page in each class
+    - Will also contain the methods which perform the operations on those
+      WebElements
+
+Stores separately locators and test script:
+
+|Page Class --> Locators|  +  |Test Case Class|
+|           --> Methods |
+
+Test uses the methods of the POM class when they need to interact with the UI
+elements of the page
+
+---------------------
+
+WHY IS IT NEEDED?
+- When more automation tests are created it could lead to a project structure that
+  is not easy to maintain
+- To prevent duplication of code or duplicated usage of locators
+  Ex:
+        10 test scripts are using the same locator/page element
+        If there is a change, you would need to change in each script
+
+- Would consume a lot of time to change element locators in entire script
+
+----------------------
+
+ADVANTAGES OF USING POM:
+
+- If the UI changes for the page, the tests themselves don't need to be changed,
+  only the code within the page object class
+- All changes to support the UI change are located in one page.  Reusable - if
+  there is a change in web element it only needs to be changed in one place
+- POM makes our script reusable, readable, and maintainable
+- Keeps code clean and easy to maintain and understand. Especially when locators,
+  operations, and tests are named with descriptive names
+- Increases efficiency of the test automation framework
+- The page object repository is independent of Automation tests. Since they're
+  stored separately, the repository can be used for different purposes with
+  different frameworks. We can integrate the repository with other tools like:
+
+   J-Unit, PHP Unit, N-Unit, TestNG, G-Unit, Cucumber
+
+- Test classes become shorter and optimized because we are able to reuse page object
+  methods from the page object classes
+- Any change in UI can be implemented updated and maintained into the page object classes
+
+WHAT IS PAGE FACTORY?
+
+It is a built-in class in Selenium for maintaining object repository.
+POM can be implemented with or without Page Factory
+
+Without Page Factory:
+    - Uses By()
+    - No imports needed
+    - No cache storage
+
+With Page Factory:
+    - Uses @FindBy()
+    - Import package: Page factory
+    - Cache lookup is faster
+
+
+HOW TO MAKE OUR FRAMEWORK:
+
+Page Class - creating our own page library, for element behaviors,
+and methods to return something plus can have parameters
+
+Test class - validation and assertions
+
+2 rules for POM pattern:
+1. Do not write assertions in Page Class, Assertions should be written in Test Class
+2. Test class never use Driver should not be written in Test class
+test class should only be used for assertions
+page class is used for checking behavior
+
+page class:
+
+by locators
+-
+-
+-
+-
+
+constructor with driver inside
+
+actions/page methods - checking behavior of the page
+-
+-
+-
+-
+
+(ea page class extend basepage) iheriting
+
+base page - initate driver
+
+base test
+obj of base page (driver)
+test
+    method calling
+
+    test class 1 -extend base test
+    validate in form of assertions
+
+
+asseertion is test page responsibiity
+page class is for begaviors
+
+
+landing from one page should eturn the next landing page object
+page chaining model
+
+//test.xml
+
+*****  //my notes
+Creation Order:
+
+1. Utilties
+2.
+
+
+
+
+
+

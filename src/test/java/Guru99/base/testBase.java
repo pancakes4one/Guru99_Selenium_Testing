@@ -17,16 +17,16 @@ public class testBase {
 //    Step 7) Verify new customer added successfully
 
 
-    @BeforeMethod
-    public void setUp(){
-        driverUtil.getDriver().manage().window().maximize();
-        driverUtil.getDriver().manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-
-    }
-
-    @AfterMethod
-    public void closeDriver() throws InterruptedException {
-        Thread.sleep(3000);
-//        driverUtil.closeDriver();
-    }
+//    @BeforeMethod
+//    public void initialize(){
+//        driverUtil.getDriver().manage().window().maximize();
+//        driverUtil.getDriver().manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+//
+//    }
+//
+//    @AfterMethod
+//    public void closeDriver() throws InterruptedException {
+//        Thread.sleep(3000);
+////        driverUtil.closeDriver();
+//    }
 }

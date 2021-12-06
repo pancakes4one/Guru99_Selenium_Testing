@@ -8,12 +8,16 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 
 public class driverUtil {
+
+    // why do we have static method here?
     private  driverUtil(){
     }
+    // set
     private static WebDriver driver;
+    // and get methods - encapsulates
     public static WebDriver getDriver(){
         if (driver==null){
-            String browser = propertiesReaderUtil.getProperty("browser");
+            String browser = propReadUtil.getProperty("browser");
             switch (browser){
                 case "chrome":
                     WebDriverManager.chromedriver().setup();

@@ -1,0 +1,18 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="All Web Pages">
+    <test name="Testing Login Page">
+        <classes>
+            <class name="Guru99.test.LoginPgTest"></class>
+        </classes>
+    </test>
+    <test name="Testing HomePage">
+        <classes>
+            <class name="Guru99.test.HomePgTest"></class>
+        </classes>
+    </test>
+    <test name="Testing Customer Page">
+        <classes>
+            <class name="Guru99.test.CustPgTest"></class>
+        </classes>
+    </test>
+</suite>
